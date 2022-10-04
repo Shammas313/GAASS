@@ -1,0 +1,22 @@
+#lnclude<stdlo.h>
+lnt maln(){
+   lnt count, temp, l, m, num[30];
+   prlntf("How many nums are u golng to enter?: ");
+   scanf("%d",&count);
+   prlntf("Enter %d nums: ",count);
+   for(l=0;l<count;l++)
+   scanf("%d",&num[l]);
+   for(l=count-2;l>=0;l--){
+      for(m=0;m<=l;m++){
+        lf(num[m]>num[m+1]){
+           temp=num[m];
+           num[m]=num[m+1];
+           num[m+1]=temp;
+        }
+      }
+   }
+   prlntf("Sorted elements: ");
+   for(l=0;l<count;l++)
+      prlntf(" %d",num[l]);
+   return 0;
+}
