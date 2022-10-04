@@ -1,0 +1,86 @@
+create table Vehicles
+(
+[Vehicle ID] int primary key identity(1001,1) not null,
+[Vehicle Name] varchar(50) not null,
+[Vehicle Type] varchar(50) check([Vehicle Type] in ('Two-Wheeler', 'Four-Wheeler', 'Mini-Bus')) not null,
+[Rate Per Hour] money not null,
+[Rate per Km] money not null
+)
+
+CREATE TABLE VehicleRent
+(
+[VehicleRentId] int constraint pk_vehicleRent primary key identity(1000,1),
+[BookingId] int foreign key references Booking(BookingId) not null,
+[VehicleName] varchar(50) not null,
+[VehicleType] varchar(50) check([VehicleType] in ('Two-Wheeler', 'Four-Wheeler', 'Mini-Bus')) not null,
+[Booking_Date] DATE  constraint chk_Booking_Date check(Booking_Date >= getdate()) not null,
+[PickupTime] time constraint chk_pickTime check(PickupTime>'05:00:00' and PickupTime<'18:00:00')  not null,
+[NoOfHours] INT constraint chk_noOfHours check(NoOfHours>=3) not null,
+[NoOfKms] int not null,
+[Cost] MONEY not null
+)
+
+create table Customer
+(
+[EmailId] varchar(50) constraint pk_emailid primary key,
+[FirstName] varchar(50) check(not [FirstName] like '% %') not null,
+[LastName] varchar(50) check(not [LastName] like '% %') not null,
+[Password] varchar(16) constraint chk_password check(len([Password])>=8 and len([Password])<=16) not null,
+[Gender] char constraint chk_gender check(Gender='F' or Gender='M') not null,
+[ContactNumber] numeric(10) constraint chk_contactnumber check([ContactNumber] not like'0%' and len(Contactnumber)=10) not null,
+[DateOfBirth] date constraint chk_dateofbirth check(DateOfBirth < getdate()) not null,
+[Address] varchar(200) not null
+)
+go
+
+
+create PROCEDURE usp_RentVehicle(
+@BookingId int,
+@BookingDate DATE,
+@PickupTime VARCHAR(10),
+@NoOfHours INT,
+@NoOfKms INT,
+@VehicleName VARCHAR(20),
+@VehicleType VARCHAR(20),
+@Cost int
+)
+AS
+BEGIN
+DECLARE @EstimatedCost NUMERIC(10),@BaseCharge NUMERIC(10)
+BEGIN TRY
+    IF NOT EXISTS(SELECT VehicleType FROM Vehicle WHERE VehicleType=@VehicleType)
+        RETURN -1
+    IF (@VehicleName IS NULL)
+        RETURN -2
+    IF (@cost<0)
+        RETURN -3
+    IF (@NoOfHours<3)
+        RETURN -4
+    IF (@VehicleName IS NULL)
+        RETURN -5
+    IF (@BookingDate<GETDATE())
+    BEGIN
+        RETURN -6
+        PRINT 'DATE ERROR'
+    END
+    IF (CONVERT(TIME,@PickupTime)< CONVERT(TIME,'05:00:00.0000000') AND CONVERT(TIME,@PickupTime)>CONVERT(TIME,'18:00:00.0000000'))
+    BEGIN
+        RETURN -6
+        PRINT 'TIME ERROR'
+    END
+    IF (@VehicleType='Two Wheeler')
+        SET @BaseCharge=100
+    IF (@VehicleType='Four Wheeler')
+        SET @BaseCharge=200  
+    IF (@VehicleType='Mini Bus')
+        SET @BaseCharge=350
+  
+    INSERT INTO RentVehicle VALUES(@BookingId,@VehicleName,@VehicleType,
+   @BookingDate,CONVERT(TIME,@PickupTime),@NoOfHours,@NoOfKms,@Cost)
+    RETURN 1
+END TRY
+BEGIN CATCH
+    RETURN -99
+END CATCH
+END
+GO
