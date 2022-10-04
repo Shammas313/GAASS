@@ -1,0 +1,7 @@
+Despite its benefits, there are still some limitations of SIEM, including the following:
+
+Usually, it takes a long time to implement because it requires support to ensure successful integration with an organization's security controls and the many hosts in its infrastructure. It typically takes 90 days or longer to install SIEM before it starts to work.
+It's expensive. The initial investment in SIEM can be in the hundreds of thousands of dollars. And the associated costs can also add up, including the costs of personnel to manage and monitor a SIEM implementation, annual support, and software or agents to collect data.
+Analyzing, configuring and integrating reports require the talent of experts. That's why some SIEM systems are managed directly within a security operations center (SOC), a centralized unit staffed by an information security team that deals with an organization's security issues.
+SIEM tools usually depend on rules to analyze all the recorded data. The problem is that a company's network generates a large number of alerts -- usually, 10,000 per day -- which may or may not be positive. Consequently, it's difficult to identify potential attacks because of the number of irrelevant logs.
+A misconfigured SIEM tool may miss important security events, making information risk management less effective.
