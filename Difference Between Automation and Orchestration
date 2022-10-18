@@ -1,0 +1,9 @@
+While security automation and security orchestration are terms that are often used interchangeably, the two platforms serve very different roles:
+
+Security automation reduces the time it takes to detect and respond to repetitive incidents and false positives, so alerts don't linger unaddressed for long periods of time:
+Frees security analysts' time to focus on strategic tasks, like investigative research.
+Each automated playbook addresses a known scenario with a prescribed course of action.
+Security orchestration allows you to share information easily, enabling multiple tools to respond to incidents as a group, even when the data is spread across a large network and multiple systems or devices:
+Security orchestration uses multiple automated tasks to execute a complete, complex process or workflow.
+The strength of a SOAR solution lies in its breadth of pre-built integrations that speed and ease deployment of security operations use cases.
+Security automation is all about simplifying and making security operations run more efficiently because it deals with an array of single tasks, whereas security orchestration connects all of your different security tools so that they feed into one another, creating a fast and efficient workflow process from beginning to end.They work best when paired together and security groups can maximize their efficiency and productivity when they adopt both.
