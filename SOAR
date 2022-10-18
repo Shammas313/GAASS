@@ -1,0 +1,7 @@
+Security orchestration, automation and response (SOAR) technology helps coordinate, execute and automate tasks between various people and tools all within a single platform. This allows organizations to not only quickly respond to cybersecurity attacks but also observe, understand and prevent future incidents, thus improving their overall security posture.
+
+A comprehensive SOAR product, as defined by Gartner, is designed to operate under three primary software capabilities: threat and vulnerability management, security incident response, and security operations automation.
+
+Threat and vulnerability management (orchestration) covers technologies that help amend cyberthreats, while security operations automation (automation) relates to the technologies that enable automation and orchestration within operations.
+
+SOARs ingest alert data, and these alerts then trigger playbooks that automate/orchestrate response workflows or tasks. Then, using a combination of human and machine learning, organizations are able to analyze this diverse data in order to comprehend and prioritize automated incident response actions to any future threats, thus creating a more efficient and effective approach to handling cybersecurity and improving security operations.
