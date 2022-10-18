@@ -1,0 +1,16 @@
+Security automation is the machine-based execution of security actions with the power to detect, investigate and remediate cyberthreats, without the need for manual human intervention. It does much of the rote work for the SOC team, so they no longer need to weed through and manually address every alert as it comes in. Security automation can:
+
+Detects threats in your environment.
+Triage potential threats.
+Determine whether to take action on the incident.
+Contain and resolve the issue.
+All of that can happen in seconds, without any involvement from human staff. Security analysts don't have to follow the steps, instructions and decision-making workflow to investigate the event and determine whether it is a legitimate incident. Repetitive, time-consuming actions are taken out of their hands so they can focus on more important, value-adding work.
+
+Security orchestration is the machine-based coordination of a series of interdependent security actions, including incident investigation, response and ultimately resolution, all across a single, complex infrastructure. It ensures that all of your security and non-security tools are working together in unison  whether automating tasks across products and workflows or manually alerting agents on important incidents that need more attention.
+
+Security orchestration can:
+
+Provide better context around security incidents. A security orchestration tool aggregates data from different sources to offer deeper insight. As such, you gain a comprehensive view of the entire environment.
+Allow for deeper, more meaningful investigations. Security analysts can stop managing alerts and start investigating why those incidents are occurring. Additionally, security orchestration tools typically offer highly interactive and intuitive dashboards, graphs and timelines; and those visuals can be highly useful during the investigative process.
+Improve collaboration. Additional parties, including analysts at different tiers, managers, the CTO and C-suite executives, legal teams, and HR, may also need to get involved with certain types of security incidents. Security orchestration can put all the necessary data at everyone's fingertips, making collaboration, problem solving and resolution more effective.
+Ultimately, security orchestration increases the integration of your defenses, allowing your security team to automate complex processes and maximize the value you receive from your security staff, processes and tools.
